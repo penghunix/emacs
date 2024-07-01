@@ -38,6 +38,17 @@
 (setq package-native-complie t)
 (package-initialize)
 
+;; Bootstrap 'use-package'
+(eval-after-load 'gnutls
+  '(add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem"))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(setq use-package-always-ensure t)
+
 (use-package diminish
   :ensure t)
 (require 'diminish)
@@ -56,7 +67,7 @@
 (scroll-bar-mode -1)
 
 (load-theme 'adwaita)
-(set-face-attribute 'default nil :family "Hack Nerd Font" :height 120)
+(set-face-attribute 'default nil :family "Hack Nerd Font" :height 140)
 ;; (set-face-attribute 'region nil :background "#fca62d")
 
 ;; to insert a line like below(^L, page break) C-q C-l

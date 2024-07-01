@@ -154,7 +154,9 @@
 	(mapc 'kill-buffer (buffer-list)))
 
 
-(global-unset-key (kbd "S-<SPC>"))
+;; (global-unset-key (kbd "S-<SPC>"))
+(setq default-input-method "korean-hangul")
+(global-set-key (kbd "S-<SPC>") 'toggle-input-method)
 
 ;; Don't disable narrowing commands
 (put 'narrow-to-region 'disabled nil)
