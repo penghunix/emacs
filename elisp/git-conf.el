@@ -16,5 +16,7 @@
   (global-set-key (kbd "C-x M-g") 'magit-dispatch)
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up))
 
+(provide 'git-conf)
+
 
 ;;; git-conf.el ends here

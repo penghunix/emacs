@@ -18,8 +18,8 @@
   (interactive)
   (eshell 'N))
 
-(setenv "SHELL" "C:/Users/es-kyeongsoo/scoop/shims/bash.exe")
-(setq explicit-shell-file-name "C:/Users/es-kyeongsoo/scoop/shims/bash.exe")
+(setenv "SHELL" "/usr/bin/zsh")
+(setq explicit-shell-file-name "/usr/bin/zsh")
 
 (setq my/eshell-aliases
       '((d  . dired)

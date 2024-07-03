@@ -66,8 +66,8 @@
 (global-auto-revert-mode 1)
 (scroll-bar-mode -1)
 
-(load-theme 'adwaita)
-(set-face-attribute 'default nil :family "Hack Nerd Font" :height 140)
+(load-theme 'modus-vivendi)
+(set-face-attribute 'default nil :family "0xProto Nerd Font" :height 160)
 ;; (set-face-attribute 'region nil :background "#fca62d")
 
 ;; to insert a line like below(^L, page break) C-q C-l
@@ -79,6 +79,10 @@
 (require 'minibuffer-conf)
 (require 'dired-conf)
 (require 'window-conf)
+(require 'lsp-conf)
+(require 'org-conf)
+(require 'nov-conf)
+(require 'git-conf)
 
 (provide 'init)
 

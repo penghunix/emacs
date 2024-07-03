@@ -18,5 +18,4 @@
   (setq recentf-filename-handlers
 		(append '(abbreviate-file-name) recentf-filename-handlers))
   (recentf-mode))
-
 ;;; search-conf.el ends here
