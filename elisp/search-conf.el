@@ -17,5 +17,9 @@
   (setq recentf-max-saved-items 200)
   (setq recentf-filename-handlers
 		(append '(abbreviate-file-name) recentf-filename-handlers))
+  (define-key recentf-mode-map (kbd "C-x C-r") 'recentf)
   (recentf-mode))
+
+(provide 'search-conf)
+
 ;;; search-conf.el ends here

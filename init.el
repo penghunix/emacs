@@ -63,11 +63,12 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
-(global-auto-revert-mode 1)
 (scroll-bar-mode -1)
+(global-auto-revert-mode 1)
+(global-tab-line-mode t)
 
 (load-theme 'modus-vivendi)
-(set-face-attribute 'default nil :family "0xProto Nerd Font" :height 160)
+(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 160)
 ;; (set-face-attribute 'region nil :background "#fca62d")
 
 ;; to insert a line like below(^L, page break) C-q C-l
@@ -75,6 +76,7 @@
 
 
 (require 'editing-conf)
+(require 'search-conf)
 (require 'eshell-conf)
 (require 'minibuffer-conf)
 (require 'dired-conf)
@@ -83,6 +85,7 @@
 (require 'org-conf)
 (require 'nov-conf)
 (require 'git-conf)
+(require 'project-conf)
 
 (provide 'init)
 

@@ -1,9 +1,32 @@
 ;;; lsp-conf.el --- Settings for grep and grep-like tools -*- lexical-binding: t -*-
 ;;; Commentary:
+;;; useful link: https://www.adventuresinwhy.com/post/eglot/
 ;;; Code:
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
+
+;; M-. goto definition
+;; M-, goto implementation
+;; M-? xref-find-references
 (use-package eglot
+  :ensure t
+  :defer t
+  :hook
+  (python-mode . eglot-ensure))
+
+
+
+(use-package tree-sitter
   :ensure t)
+
+(use-package tree-sitter-langs
+  :ensure t)
+
+(global-tree-sitter-mode t)
 
 
 

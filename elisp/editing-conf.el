@@ -91,7 +91,8 @@
   :ensure t
   :diminish
   :config
-  (setq-default which-key-idle-delay 1.5))
+  (setq-default which-key-idle-delay 1.0)
+  (which-key-mode t))
 
 (use-package browse-kill-ring
   :ensure t
@@ -152,11 +153,19 @@
 (defun kill-all-buffers ()
 	(interactive)
 	(mapc 'kill-buffer (buffer-list)))
+(global-set-key (kbd "C-x a k") 'kill-all-buffers)
+
+(defun next-open-line ()
+  (interactive)
+  (move-end-of-line 1)
+  (newline-and-indent))
+(global-set-key (kbd "S-<return>") 'next-open-line)
 
 
-;; (global-unset-key (kbd "S-<SPC>"))
+(global-unset-key (kbd "S-<SPC>"))
 (setq default-input-method "korean-hangul")
-(global-set-key (kbd "S-<SPC>") 'toggle-input-method)
+;; (global-set-key (kbd "S-<SPC>") 'toggle-input-method)
+;; use C-\ instead
 
 ;; Don't disable narrowing commands
 (put 'narrow-to-region 'disabled nil)
