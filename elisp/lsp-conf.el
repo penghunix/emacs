@@ -16,12 +16,15 @@
   :ensure t
   :defer t
   :hook
-  (python-mode . eglot-ensure))
+  (python-mode . eglot-ensure)
+  (javascript-mode . eglot-ensure)
+  (typescript-ts-mode . eglot-ensure))
 
 
 
 (use-package tree-sitter
-  :ensure t)
+  :ensure t
+  :diminish 'tree-sitter)
 
 (use-package tree-sitter-langs
   :ensure t)
@@ -86,7 +89,36 @@ there is no current file, eval the current buffer."
 
 
 
-;; html
+;; web
+
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2
+        web-mode-enable-auto-pairing t
+        web-mode-enable-css-colorization t
+        web-mode-enable-part-face t
+        web-mode-enable-comment-interpolation t
+        web-mode-enable-heredoc-fontification t
+        web-mode-enable-current-element-highlight t
+        web-mode-enable-current-column-highlight t)
+  (setq web-mode-engines-alist
+        '(("php"    . "\\.phtml\\'")
+          ("blade"  . "\\.blade\\."))))
+
+;; npm install -g javacript-typescript-langserver
+;; npm install -g typescript-language-server
+
 (use-package tagedit
   :ensure t
   :config

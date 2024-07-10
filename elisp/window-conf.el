@@ -64,6 +64,36 @@ Call a second time to restore the original window configuration."
 
 (global-set-key (kbd "<f7>") 'sanityinc/split-window)
 
+
+
+(use-package tab-bar
+  :ensure nil
+  :bind (("C-<f4>" . tab-bar-close-tab))
+  ;; :bind (("s-[" . tab-bar-switch-to-prev-tab)
+  ;;        ("s-]" . tab-bar-switch-to-next-tab)
+  ;;        ("s-{" . (lambda ()
+  ;;                   (interactive)
+  ;;                   (tab-move -1)))
+  ;;        ("s-}" . (lambda ()
+  ;;                   (interactive)
+  ;;                   (tab-move 1))))
+  :custom
+  (tab-bar-show t)
+  (tab-bar-close-button-show nil)
+  (tab-bar-auto-width nil)
+  (tab-bar-format '(tab-bar-format-menu-bar
+                    ;;dw/exwm-workspace-icon
+                    tab-bar-format-tabs-groups
+                    tab-bar-separator
+                    ;;dw/tmr-mode-line
+                    tab-bar-separator
+                    tab-bar-format-align-right
+                    tab-bar-format-global))
+  ;; Like winner-mode for tabs
+  (tab-bar-history-mode 1)
+  (tab-bar-mode 1))
+
+
 (provide 'window-conf)
 
 ;;; window-conf.el ends here

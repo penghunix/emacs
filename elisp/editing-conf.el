@@ -20,7 +20,7 @@
               delete-old-versions t
               kept-old-versions 5
               kept-new-versions 5
-              tab-width 4
+              tab-width 2
               truncate-lines t
               line-move-visual t
               sentence-end-double-space nil
@@ -64,10 +64,12 @@
 (add-hook 'after-init-hook 'transient-mark-mode)
 (add-hook 'after-init-hook 'subword-mode)
 
-(add-hook 'prog-mode-hook (lambda ()
-                            (display-line-numbers-mode t)
-                            ;; (hl-line-mode nil)
-                            (display-fill-column-indicator-mode t)))
+(dolist (mode '(text-mode-hook
+                prog-mode-hook
+                conf-mode-hook))
+  (add-hook mode (lambda ()
+                   (display-line-numbers-mode t)
+                   (display-fill-column-indicator-mode t))))
 
 (use-package rainbow-mode
   :ensure t

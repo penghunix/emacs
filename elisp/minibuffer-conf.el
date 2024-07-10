@@ -8,6 +8,12 @@
   :config
   (ivy-mode t))
 
+(use-package vertico
+  :ensure t)
+
+(use-package orderless
+  :ensure t)
+
 (use-package marginalia
   :ensure t
   :diminish

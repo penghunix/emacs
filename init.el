@@ -65,9 +65,9 @@
 (tooltip-mode -1)
 (scroll-bar-mode -1)
 (global-auto-revert-mode 1)
-(global-tab-line-mode t)
+;; (global-tab-line-mode t)
 
-(load-theme 'modus-vivendi)
+;; (load-theme 'modus-vivendi)
 (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 160)
 ;; (set-face-attribute 'region nil :background "#fca62d")
 
@@ -76,16 +76,19 @@
 
 
 (require 'editing-conf)
+(require 'theme-conf)
 (require 'search-conf)
 (require 'eshell-conf)
 (require 'minibuffer-conf)
+(require 'modeline-conf)
 (require 'dired-conf)
 (require 'window-conf)
 (require 'lsp-conf)
 (require 'org-conf)
-(require 'nov-conf)
+(require 'reading-conf)
 (require 'git-conf)
 (require 'project-conf)
+(require 'util-conf)
 
 (provide 'init)
 
