@@ -18,6 +18,21 @@
   (interactive)
   (eshell 'N))
 
+(defun ks/map-line-to-status-char (line)
+  (cond ((string-match "^?\\? " line) "?")))
+
+(defun ks/get-git-status-prompt ()
+  (let ((status-line (cdr (process-lines "git" "status" "--porcelain" "-b"))))
+    (seq-uniq (seq-filter 'identity (mapcar 'ks/map-line-to-status-char status-lines)))))
+
+(defun ks/get-prompt-path ()
+  (let* ((current-path (eshell/pwd))
+         (git-output (shell-command-to-string "git rev-parse --show-toplevel"))
+         (has-path (not (string-match "^fatal" git-output))))
+    (if (not has-path)
+        (abbreviate-file-name current-path)
+      (string-remove-prefix (file-name-directory git-output) current-path))))
+
 (setenv "SHELL" "/usr/bin/zsh")
 (setq explicit-shell-file-name "/usr/bin/zsh")
 

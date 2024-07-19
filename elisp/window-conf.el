@@ -68,15 +68,16 @@ Call a second time to restore the original window configuration."
 
 (use-package tab-bar
   :ensure nil
-  :bind (("C-<f4>" . tab-bar-close-tab))
-  ;; :bind (("s-[" . tab-bar-switch-to-prev-tab)
-  ;;        ("s-]" . tab-bar-switch-to-next-tab)
-  ;;        ("s-{" . (lambda ()
-  ;;                   (interactive)
-  ;;                   (tab-move -1)))
-  ;;        ("s-}" . (lambda ()
-  ;;                   (interactive)
-  ;;                   (tab-move 1))))
+  ;; tab-bar prefix = C-x t
+  :bind (("s-[" . tab-bar-switch-to-prev-tab)
+         ("s-]" . tab-bar-switch-to-next-tab)
+         ("s-{" . (lambda ()
+                    (interactive)
+                    (tab-move -1)))
+         ("s-}" . (lambda ()
+                    (interactive)
+                    (tab-move 1)))
+         ("s-<f4>" . tab-bar-close-tab))
   :custom
   (tab-bar-show t)
   (tab-bar-close-button-show nil)

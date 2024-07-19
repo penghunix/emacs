@@ -68,7 +68,7 @@
 ;; (global-tab-line-mode t)
 
 ;; (load-theme 'modus-vivendi)
-(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 160)
+(set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 140)
 ;; (set-face-attribute 'region nil :background "#fca62d")
 
 ;; to insert a line like below(^L, page break) C-q C-l

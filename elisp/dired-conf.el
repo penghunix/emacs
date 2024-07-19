@@ -6,6 +6,12 @@
 
 ;;; Code:
 
+;; macos issue -> Listing directory failed but 'access-file' worked
+;; brew install coreutils
+;; then do below -> it worked!
+(setq insert-directory-program "gls" dired-use-ls-dired t)
+(setq dired-listing-switches "-al --group-diretories-first")
+
 (setq-default dired-dwim-target t)
 (setq dired-recursive-deletes 'top
       dired-listing-switches "-agho --group-directories-first"

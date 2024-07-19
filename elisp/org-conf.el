@@ -2,7 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq org-log-done t
+(use-package org
+  :ensure t
+  :config
+  (require 'org-tempo)
+    ;; Add custom templates
+  (add-to-list 'org-structure-template-alist '("sh" . "src sh"))
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("py" . "src python"))
+  (setq org-log-done t
       org-edit-timestamp-down-means-later t
       org-hide-emphasis-markers t
       org-catch-invisible-edits 'show
@@ -10,7 +18,12 @@
       org-fast-tag-selection-single-key 'expert
       org-html-validation-link nil
       org-export-kill-product-buffer-when-displayed t
-      org-tags-column 80)
+      org-tags-column 80))
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 ;; Lots of stuff from http://doc.norang.ca/org-mode.html
 

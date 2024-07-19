@@ -86,6 +86,9 @@
 (use-package move-dup
   :ensure t
   :config
+  (global-set-key (kbd "s-<down>") 'move-dup-move-lines-down)
+  (global-set-key (kbd "s-<up>") 'move-dup-move-lines-up)
+  (global-set-key (kbd "s-d") 'duplicate-line)
   (global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
   (global-set-key (kbd "C-c u") 'move-dup-duplicate-up))
 

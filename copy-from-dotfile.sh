@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 
 cp -rf ~/.config/emacs/elisp/* elisp

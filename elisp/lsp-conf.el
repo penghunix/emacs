@@ -127,6 +127,12 @@ there is no current file, eval the current buffer."
   (define-key tagedit-mode-map (kbd "M-s") nil)
   (add-hook 'sgml-mode-hook (lambda () (tagedit-mode 1))))
 
+;; for emmet for html
+(use-package zencoding-mode
+  :ensure t
+  :config
+  (add-hook 'web-mode-hook 'zencoding-mode))
+
 
 
 (provide 'lsp-conf)
