@@ -89,6 +89,7 @@
 (require 'git-conf)
 (require 'project-conf)
 (require 'util-conf)
+(require 'vterm-conf)
 
 (provide 'init)
 
